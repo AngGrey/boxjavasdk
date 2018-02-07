@@ -103,7 +103,7 @@ public class BatchAPIRequest extends BoxJSONRequest {
                 JsonObject batchResponseHeadersObject = jsonResponse.get("headers").asObject();
                 for (JsonObject.Member member : batchResponseHeadersObject) {
                     String headerName = member.getName();
-                    String headerValue = member.getValue().asString();
+                    String headerValue = String.valueOf(member.getValue());
                     responseHeaders.put(headerName, headerValue);
                 }
             }
